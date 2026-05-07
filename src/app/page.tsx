@@ -1,6 +1,10 @@
+"use client";
+
+import AuditForm from "@/components/forms/audit-form";
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white flex items-center justify-center px-6">
+    <main className="min-h-screen bg-black text-white flex flex-col items-center px-6 py-24">
       <div className="max-w-3xl text-center">
         <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
           AI Spend Audit Tool
@@ -13,14 +17,13 @@ export default function Home() {
         <p className="mt-6 text-lg text-zinc-400 leading-8">
           Discover where your startup is overspending on AI tools and uncover smarter alternatives in minutes.
         </p>
-
-        <button
-          className="mt-10 rounded-2xl bg-white px-6 py-3 text-black font-medium hover:bg-zinc-200 transition"
-          aria-label="Start your free AI spend audit"
-        >
-          Start Free Audit
-        </button>
       </div>
+
+      <AuditForm
+        onSubmit={(formData) => {
+          console.log("Form submitted:", formData);
+        }}
+      />
     </main>
   );
 }
